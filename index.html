@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>QR Generator</title>
+
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+
+  <script type="text/javascript" src="https://unpkg.com/qr-code-styling/lib/qr-code-styling.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body onload="updateQrImg">
+
+<header id="header"><h1>SURE TRUST</h1></header>
+
+<section id="content">
+
+  <div>
+
+    <form id="qrForm" onsubmit="return false;">
+
+      <div class="inputContainer">
+
+        <label for="fname">First Name</label>
+        <input type="text" oninput="firstName();" name="fname" id="fname" placeholder="Micheal" required />
+
+        <label for="lname">Last Name</label>
+        <input type="text" oninput="lastName();" name="lname" id="lname" placeholder="Johnson" required />
+
+        <label for="dob">Date of Birth</label>
+        <input type="date" oninput="getDOB();" name="dob" id="dob" placeholder="01/01/2001" required />
+
+        <label for="college">College</label>
+        <input type="text" oninput="getCollege();" name="college" id="college" placeholder="XYZ College of Engineering Mumbai" required />
+        
+        <label for="education">Education</label>
+        <input type="text" oninput="getEducation();" name="education" id="education" placeholder="B.Tech / B.Sc / B.Com" required />
+
+       <label for="qrtext">Review Info</label>
+        <textarea placeholder="Enter Your Text" id="qrtext"></textarea>
+
+      </div>
+
+      <div id="button">
+        <button id="formButton" onclick="download()">Download</button>
+      </div>
+
+    </form>
+
+  </div>
+
+  <div id="canvas" class="inputContainer"></div>
+
+</section>
+
+<script type="text/javascript" src="script.js"></script>
+
+</body>
+
+</html>
