@@ -1,69 +1,99 @@
 <!DOCTYPE html>
 
 <html>
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
+    <title>QR Generator</title>
 
-  <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
 
-  <title>QR Generator</title>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/qr-code-styling/lib/qr-code-styling.js"
+    ></script>
 
-  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
 
-  <script type="text/javascript" src="https://unpkg.com/qr-code-styling/lib/qr-code-styling.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <body onload="updateQrImg">
+    <header id="header">
+      <h1>SURE TRUST</h1>
+      <h1>SURE TRUST very good institute</h1>
+    </header>
 
-  <link rel="stylesheet" href="style.css">
+    <section id="content">
+      <div>
+        <form id="qrForm" onsubmit="return false;">
+          <div class="inputContainer">
+            <label for="fname">First Name</label>
+            <input
+              type="text"
+              oninput="firstName();"
+              name="fname"
+              id="fname"
+              placeholder="Micheal"
+              required
+            />
 
-</head>
+            <label for="lname">Last Name</label>
+            <input
+              type="text"
+              oninput="lastName();"
+              name="lname"
+              id="lname"
+              placeholder="Johnson"
+              required
+            />
 
-<body onload="updateQrImg">
+            <label for="dob">Date of Birth</label>
+            <input
+              type="date"
+              oninput="getDOB();"
+              name="dob"
+              id="dob"
+              placeholder="01/01/2001"
+              required
+            />
 
-<header id="header"><h1>SURE TRUST</h1></header>
+            <label for="college">College</label>
+            <input
+              type="text"
+              oninput="getCollege();"
+              name="college"
+              id="college"
+              placeholder="XYZ College of Engineering Mumbai"
+              required
+            />
 
-<section id="content">
+            <label for="education">Education</label>
+            <input
+              type="text"
+              oninput="getEducation();"
+              name="education"
+              id="education"
+              placeholder="B.Tech / B.Sc / B.Com"
+              required
+            />
 
-  <div>
+            <label for="qrtext">Review Info</label>
+            <textarea placeholder="Enter Your Text" id="qrtext"></textarea>
+          </div>
 
-    <form id="qrForm" onsubmit="return false;">
-
-      <div class="inputContainer">
-
-        <label for="fname">First Name</label>
-        <input type="text" oninput="firstName();" name="fname" id="fname" placeholder="Micheal" required />
-
-        <label for="lname">Last Name</label>
-        <input type="text" oninput="lastName();" name="lname" id="lname" placeholder="Johnson" required />
-
-        <label for="dob">Date of Birth</label>
-        <input type="date" oninput="getDOB();" name="dob" id="dob" placeholder="01/01/2001" required />
-
-        <label for="college">College</label>
-        <input type="text" oninput="getCollege();" name="college" id="college" placeholder="XYZ College of Engineering Mumbai" required />
-        
-        <label for="education">Education</label>
-        <input type="text" oninput="getEducation();" name="education" id="education" placeholder="B.Tech / B.Sc / B.Com" required />
-
-       <label for="qrtext">Review Info</label>
-        <textarea placeholder="Enter Your Text" id="qrtext"></textarea>
-
+          <div id="button">
+            <button id="formButton" onclick="download()">Download</button>
+          </div>
+        </form>
       </div>
 
-      <div id="button">
-        <button id="formButton" onclick="download()">Download</button>
-      </div>
+      <div id="canvas" class="inputContainer"></div>
+    </section>
 
-    </form>
-
-  </div>
-
-  <div id="canvas" class="inputContainer"></div>
-
-</section>
-
-<script type="text/javascript" src="script.js"></script>
-
-</body>
-
+    <script type="text/javascript" src="script.js"></script>
+  </body>
 </html>
